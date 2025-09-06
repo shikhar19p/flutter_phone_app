@@ -1,70 +1,24 @@
 import 'package:flutter/material.dart';
+import 'screens/bms_screen_improved.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BmsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BmsApp extends StatelessWidget {
+  const BmsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Phone App',
+      title: 'BMS Gaming Hub',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF94EA01)),
         useMaterial3: true,
+        primaryColor: const Color(0xFF94EA01),
       ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter Phone App'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(
-              Icons.phone_android,
-              size: 80,
-              color: Colors.deepPurple,
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Welcome to Flutter!',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'This is a single screen app designed for phones.',
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Hello from Flutter!')),
-          );
-        },
-        tooltip: 'Show Message',
-        child: const Icon(Icons.message),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: const BmsScreenImproved(),
     );
   }
 }
